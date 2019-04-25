@@ -1,17 +1,6 @@
 <template>
 	<div class="page-works">
-		<!--<div class="top_bar">
-			<div class="nav">
-				<div class="logo">
-					<a @click="$router.push('/main')"></a>
-				</div>
-				<div class="tab">
-					<div class="hx_1"></div>
-					<div class="hx_2"></div>
-					<div class="hx_3"></div>
-				</div>
-			</div>
-		</div>-->
+		
 		<top-bar type="b"></top-bar>
 		<div class="works_banner">
 			<div class="container">

@@ -14,13 +14,7 @@
 					<div class="works_info">
 						<div class="sm_title">作品信息</div>
 						<input v-model="biaoti" type="text" name="works_name" id="" placeholder="mingzi"/>
-						<!--<tk-select v-model="fenlei">
-							<option value="a">UI</option>
-							<option value="b">网页</option>
-							<option value="c">插画</option>
-							<option value="d">动效</option>
-							<option value="d">摄影</option>
-						</tk-select>-->
+						
 						<select v-model="fenlei" name="works_fl" id="">
 							<option value="ui">UI</option>
 							<option value="web">网页</option>

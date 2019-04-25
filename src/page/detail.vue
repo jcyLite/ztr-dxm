@@ -1,18 +1,5 @@
 <template>
 	<div class="page-detail">
-		<!--<div class="top_bar">
-			<div class="nav">
-				<div class="logo">
-					<a @click="$router.push('/main')"></a>
-				</div>
-				<div class="tab">
-					<div class="hx_1"></div>
-					<div class="hx_2"></div>
-					<div class="hx_3"></div>
-				</div>
-			</div>
-		</div>
-		</style>-->
 		<top-bar type="b"></top-bar>
 		<div class="detail_banner">
 			<div class="container">
@@ -28,8 +15,10 @@
 			<div class="container">
 				<p>
 				Study hard, improve every day.Study hard, improve every day.Study hard, improve every day.Study hard, improve every day.
+				Study hard, improve every day.Study hard, improve every day.Study hard, improve every day.Study hard, improve every day.
 
 				</p>
+				<div class="publish_time">发布于：<span class="upload_date">2000</span></div>
 			</div>
 		</div>
 		<div class="work_img">
@@ -309,33 +298,51 @@
 	/* describe */
 	.work_info {
 		width: 100%;
-		min-height: 204px;
-		padding: 46px 0;
-	}
-
-	.work_info p {
-		width: 100%;
-		font-size: 15px;
-		color: #515769;
-		line-height: 36px;
-		letter-spacing: 2.5px;
-		word-wrap: break-word;
-		word-break: break-all;
+		min-height: 180px;
+		max-height: 300px;
+		padding: 46px 0 20px 0;
+		p {
+			display: block;
+			max-height: 180px;
+			width: 100%;
+			font-size: 15px;
+			color: #515769;
+			line-height: 36px;
+			letter-spacing: 2.5px;
+			word-wrap: break-word;
+			word-break: break-all;
+			// white-space: nowrap;
+			// text-overflow: ellipsis;
+			overflow: hidden;
+		}
+		.publish_time{
+			color: #515769;
+			font-size: 14px;
+			width: 100%;
+			height: 20px;
+			margin-top: 30px;
+			letter-spacing: 2.5px;
+		}
+		span{
+			color: #515769;
+			font-size: 14px;
+		}
+		
 	}
 
 	/* pic */
 	.work_img {
 		width: 100%;
-	}
-
-	.work_img ul li {
-		width: 100%;
-		height: 855px;
-		background: #f8f8f8;
-		margin-bottom: 28px;
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: center center;
+		ul li {
+			width: 100%;
+			height: 855px;
+			background: #f8f8f8;
+			margin-bottom: 28px;
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
+		
 	}
 
 	/*点赞*/
@@ -349,6 +356,12 @@
 		transform:rotateZ(0deg);
 		transition:.3s all;
 		.dianzan_icon{
+			width: 30px;
+			height: 32px;
+			background: url(../img/dianzan.png) no-repeat;
+			position: absolute;
+			left: 29px;
+			top: 28px;
 			transform:rotateZ(0deg);
 		}
 		
@@ -358,15 +371,6 @@
 				transform:rotateZ(-45deg);
 			}
 		}
-	}
-
-	.dianzan_icon {
-		width: 30px;
-		height: 32px;
-		background: url(../img/dianzan.png) no-repeat;
-		position: absolute;
-		left: 29px;
-		top: 28px;
 	}
 
 	.dianzan:hover .dianzan_icon {

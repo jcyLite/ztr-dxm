@@ -8,7 +8,7 @@
 		<div class="container">
 			<div class="user_info">
 				<div class="user_img"></div>
-				<div class="user_name">user_name</div>
+				<div v-if="$store.state.uname" class="user_name">{{$store.state.uname}}</div>
 				<div class="user_job">user_job</div>
 				<div class="user_zym">user_zym</div>
 			</div>
@@ -42,7 +42,6 @@
 				
 				</div>
 					
-				<div class="more"><a href="">进入更多</a></div>
 				<div class="clearfix"></div>
 			</div>
 		</div>
@@ -145,11 +144,13 @@
 }
 .user_name{
 	font-size: 24px;
+	margin-top: 20px;
 	color: #222222;
 }
 .user_job{
 	font-size: 14px;
 	color: #E5E5E5;
+	margin-top: 10px;
 }
 .user_zym{
 	font-size: 18px;
@@ -165,10 +166,10 @@
 	background-position: center center;
 	background-repeat: no-repeat;
 	overflow: hidden;
-	img{
-		width: 100%;
+	cursor: pointer;
+	&:hover{
+		background-size: 120%;
 	}
-	
 }
 
 .cover_info{
@@ -233,6 +234,7 @@
 	width: 100%;
 	max-height: 1140px;
 	background: #FFFFFF;
+	margin-bottom: 100px;
 	/*display: flex;
 	flex-flow: row wrap;
 	align-items: flex-start;*/

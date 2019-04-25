@@ -12,7 +12,7 @@
 				<div class="works_categories">{{item.fenlei}}</div>
 				<div class="works_author">
 					<div class="user_img"></div>
-					<div class="user_name">adfa</div>
+					<div v-if="$store.state.uname" class="user_name">{{$store.state.uname}}</div>
 				</div>
 				<div :class="{active:item.medianzhan}" @click.stop="works_likes(item)" class="works_likes"></div>
 				
@@ -156,7 +156,6 @@
 					font-size: 28px;
 					color: #fff;
 					text-align: center;
-					line-height: 100%;
 					position: relative;
 					letter-spacing: 2.5px;
 					&::before {
@@ -185,12 +184,11 @@
 				.works_categories {
 					font-size: 16px;
 					color: rgba(255, 255, 255, 0.8);
-					line-height: 100px;
+					margin-top: 40px;
 					letter-spacing: 1.5px;
 				}
 				.works_author {
 					width: 100%;
-					// background: rgba(0, 0, 0, 0.1);
 					position: absolute;
 					bottom: 0;
 					left: 0;
@@ -209,7 +207,7 @@
 					.user_name {
 						font-size: 14px;
 						color: #fff;
-						text-indent: 20px;
+						text-indent: 15px;
 					}
 				}
 				.works_likes {
