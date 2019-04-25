@@ -64,9 +64,10 @@
 		.signin_container{
 			width: 30%;
 			min-width: 500px;
-			height: 40%;
+			height: 400px;
 			min-height: 300px;
 			background: #FFFFFF;
+			border-radius: 12px;
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -125,7 +126,7 @@
 				cursor: pointer;
 				margin-top:20px;
 				position:absolute; 
-				bottom: -10px;
+				bottom: 40px;
 				&:hover{
 					background: #222;
 				}

@@ -22,6 +22,10 @@
 				<div v-if="$store.state.uname" class="user_id">
 					{{$store.state.uname}}
 				</div>
+				<div class="sign_list">
+					<div>sign out</div>
+					<div>sign out</div>
+				</div>
 			</div>
 			
 		</div>
@@ -121,259 +125,293 @@
 </script>
 
 <style lang="less" scoped>
-	.backtop {
-		width: 56px;
-		height: 56px;
-		background-color: #f2f2f2;
-		background-image: url(../img/backtop.png);
-		background-repeat: no-repeat;
-		background-position: center 4px;
-		position: fixed;
-		right: 60px;
-		bottom: 120px;
-		cursor: pointer;
-		z-index: 10001;
-	}
-	
-	.backtop a {
-		display: block;
-		width: 100%;
-		height: 100%;
-		color: #9b9b9b;
-		font-size: 14px;
-		text-align: center;
-		line-height: 76px;
-	}
-	
-	.top_bar{
-		background:rgba(0,0,0,0);
-		width: 100%;
-		position: fixed;
-		top: 0;
-		z-index: 100000;
-		.logo{
-			width: 83px;
-			height: 23px;
-			position: absolute;
-			left: 0;
-			top: 43.5px;
-		}
-		.tab>div{
-		
-			width: 28px;
-			height: 2px;
-			margin-top: 8px;
-			position: relative;
-			top: 0;
-		}
-		.menu{
-			position: absolute;
-			right: 230px;
-			height: 100%;
-			overflow: hidden;
-			ul{
-				&.active{
-					transform:translateX(0);
-				}
-				transition:.3s all;
-				display:flex;
-				transform:translateX(101%);
-				justify-content: center;
-				align-items: center;
-				flex-flow: row nowrap;
-				li{
-					padding: 0 30px;
-				    line-height: 110px;
-				    font-size: 15px;
-				    cursor: pointer;
-				}
-			}
-		}
-		.user_info{
-			position: absolute;
-			right: 50px;
-			top: 39px;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			.user_img{
-				width: 32px;
-				height: 32px;
-				background: #000000;
-				border-radius: 16px;
-				margin-right: 10px;
-				cursor: pointer;
-			}
-			.user_id{
-				width: 80px;
-				font-size: 14px;
-				word-wrap: break-word;
-				white-space: nowrap;
-				text-overflow: ellipsis;
-				overflow: hidden;
-				cursor: pointer;
-				
-				
-			}
-		}
-		
-		&.a{
-			.user_id{
-				color: #FFFFFF;
-			}
-			.menu ul li{
-				color:#fff;
-				&.a{
-					display: block;
-					width: 100%;
-					height: 100%;
-				}
-				&:hover a {
-						color: #FFFFFF;
-					}
-				    &:after {
-						content: ' ';
-						display: block;
-						width: 0;
-						height: 2px;
-						background: #FFFFFF;
-						clear: both;
-						position: relative;
-						top: -40px;
-						transition: width .3s ease-in;
-					}
-					&:hover:after {
-						content: ' ';
-						display: block;
-						width: 30px;
-						height: 2px;
-						background: #FFFFFF;
-						clear: both;
-						transition: width .5s ease-out;
-					}
-				    &.active:after {
-						content: ' ';
-						display: block;
-						width: 20px;
-						height: 2px;
-						background: #FFFFFF;
-						clear: both;
-					}
-				}
-			.logo{
-				background: url(../img/logo01.png) no-repeat;
-			}
-			.tab>div{
-				background: #FFFFFF;
-			}
-		}
-		&.b{
-			.user_id{
-				color: #222;
-			}
-			box-shadow:5px 5px 10px rgba(0,0,0,0.2);
-			.menu ul li{
-				color:#000;
-				&.a{
-					display: block;
-					width: 100%;
-					height: 100%;
-				}
-				&:hover a {
-						color: #000;
-					}
-				    &:after {
-						content: ' ';
-						display: block;
-						width: 0;
-						height: 2px;
-						background: #000;
-						clear: both;
-						position: relative;
-						top: -40px;
-						transition: width .3s ease-in;
-					}
-					&:hover:after {
-						content: ' ';
-						display: block;
-						width: 30px;
-						height: 2px;
-						background: #000;
-						clear: both;
-						transition: width .5s ease-out;
-					}
-				    &.active:after {
-						content: ' ';
-						display: block;
-						width: 20px;
-						height: 2px;
-						background: #000;
-						clear: both;
-					}
-				}
-			
-			.logo{
-				background: url(../img/logo02.png) no-repeat;
-			}
-			.tab>div{
-				background: #000000;
-			}
-		}
-		
-	}
-	
-	.nav{
-		width: 80%;
-		height: 110px;
-		position: relative;
-		margin: 0 auto;
-		top: 0;
-	}
-	
-	
-	.logo a{
-		width: 100%;
-		height: 100%;
-		display: block;
-		position: absolute;
-		cursor: pointer;
-	}
-	.tab{
-		width: 26px;
+.backtop {
+	width: 56px;
+	height: 56px;
+	background-color: #f2f2f2;
+	background-image: url(../img/backtop.png);
+	background-repeat: no-repeat;
+	background-position: center 4px;
+	position: fixed;
+	right: 60px;
+	bottom: 120px;
+	cursor: pointer;
+	z-index: 10001;
+}
+
+.backtop a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	color: #9b9b9b;
+	font-size: 14px;
+	text-align: center;
+	line-height: 76px;
+}
+
+.top_bar{
+	background:rgba(0,0,0,0);
+	width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 100000;
+	.logo{
+		width: 83px;
 		height: 23px;
 		position: absolute;
-		right: 0;
+		left: 0;
 		top: 43.5px;
-		cursor: pointer;
-		>div{
-			opacity: 1;
+	}
+	.tab>div{
+	
+		width: 28px;
+		height: 2px;
+		margin-top: 8px;
+		position: relative;
+		top: 0;
+	}
+	.menu{
+		position: absolute;
+		right: 230px;
+		height: 100%;
+		overflow: hidden;
+		ul{
+			&.active{
+				transform:translateX(0);
+			}
 			transition:.3s all;
-			transform:translateY(0px) rotateZ(0deg);
-		}
-		&.active{
-			>div:nth-child(1){
-				transform:translateY(10px) rotateZ(135deg);
-			}
-			>div:nth-child(2){
-				transform:rotateZ(45deg);
-			}
-			>div:nth-child(3){
-				opacity: 0;
-				transform:translateY(-10px) rotateZ(135deg);
+			display:flex;
+			transform:translateX(101%);
+			justify-content: center;
+			align-items: center;
+			flex-flow: row nowrap;
+			li{
+				padding: 0 30px;
+				line-height: 110px;
+				font-size: 15px;
+				cursor: pointer;
 			}
 		}
-	}	
+	}
+	.user_info{
+		position: absolute;
+		right: 50px;
+		top: 25px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		&:hover .sign_list{
+			top: 100%;
+			opacity: 1;
+			min-height: 80px;
+			transition: all .5s ease;
+		}
+		.user_img{
+			width: 32px;
+			height: 32px;
+			background: #000000;
+			border-radius: 16px;
+			margin-right: 10px;
+			cursor: pointer;
+		}
+		.user_id{
+			width: 80px;
+			font-size: 14px;
+			line-height: 60px;
+			word-wrap: break-word;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			cursor: pointer;
+		}
+		.sign_list{
+			width: 140px;
+			display: flex;
+			min-height: 80px;
+			justify-content: space-around;
+			align-items: center;
+			flex-flow: column nowrap;
+			background: #444;
+			opacity: 0;
+			position: absolute;
+			top: 150%;
+			left: 0;
+			z-index: 10;
+			cursor: pointer;
+			>div{
+				width: 100%;
+				line-height: 56px;
+				font-size: 14px;
+				display: flex;
+				flex-flow: column nowrap;
+				justify-content: center;
+				flex: 1;
+				text-align: center;
+				color: #fff;
+				&:hover{
+					background: rgba(0,0,0,0.2);
+				}
+			}
+		}
+	}
 	
-	.tab>div:first-child{
-		margin-top: 0;
+	&.a{
+		.user_id{
+			color: #FFFFFF;
+		}
+		.menu ul li{
+			color:#fff;
+			&.a{
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
+			&:hover a {
+					color: #FFFFFF;
+				}
+				&:after {
+					content: ' ';
+					display: block;
+					width: 0;
+					height: 2px;
+					background: #FFFFFF;
+					clear: both;
+					position: relative;
+					top: -40px;
+					transition: width .3s ease-in;
+				}
+				&:hover:after {
+					content: ' ';
+					display: block;
+					width: 30px;
+					height: 2px;
+					background: #FFFFFF;
+					clear: both;
+					transition: width .5s ease-out;
+				}
+				&.active:after {
+					content: ' ';
+					display: block;
+					width: 20px;
+					height: 2px;
+					background: #FFFFFF;
+					clear: both;
+				}
+			}
+		.logo{
+			background: url(../img/logo01.png) no-repeat;
+		}
+		.tab>div{
+			background: #FFFFFF;
+		}
 	}
-	.tab:hover:not(.active) div:first-child{
-		top: -2.5px;
-	}
-	.tab:hover:not(.active) div:last-child{
-		transition: top 100ms ease-out;
-		top: 2.5px;
+	&.b{
+		.user_id{
+			color: #222;
+		}
+		box-shadow:5px 5px 10px rgba(0,0,0,0.2);
+		.menu ul li{
+			color:#000;
+			&.a{
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
+			&:hover a {
+					color: #000;
+				}
+				&:after {
+					content: ' ';
+					display: block;
+					width: 0;
+					height: 2px;
+					background: #000;
+					clear: both;
+					position: relative;
+					top: -40px;
+					transition: width .3s ease-in;
+				}
+				&:hover:after {
+					content: ' ';
+					display: block;
+					width: 30px;
+					height: 2px;
+					background: #000;
+					clear: both;
+					transition: width .5s ease-out;
+				}
+				&.active:after {
+					content: ' ';
+					display: block;
+					width: 20px;
+					height: 2px;
+					background: #000;
+					clear: both;
+				}
+			}
+		
+		.logo{
+			background: url(../img/logo02.png) no-repeat;
+		}
+		.tab>div{
+			background: #000000;
+		}
 	}
 	
+}
+
+.nav{
+	width: 80%;
+	height: 110px;
+	position: relative;
+	margin: 0 auto;
+	top: 0;
+}
+
+
+.logo a{
+	width: 100%;
+	height: 100%;
+	display: block;
+	position: absolute;
+	cursor: pointer;
+}
+.tab{
+	width: 26px;
+	height: 23px;
+	position: absolute;
+	right: 0;
+	top: 43.5px;
+	cursor: pointer;
+	>div{
+		opacity: 1;
+		transition:.3s all;
+		transform:translateY(0px) rotateZ(0deg);
+	}
+	&.active{
+		>div:nth-child(1){
+			transform:translateY(10px) rotateZ(135deg);
+		}
+		>div:nth-child(2){
+			transform:rotateZ(45deg);
+		}
+		>div:nth-child(3){
+			opacity: 0;
+			transform:translateY(-10px) rotateZ(135deg);
+		}
+	}
+}	
+
+.tab>div:first-child{
+	margin-top: 0;
+}
+.tab:hover:not(.active) div:first-child{
+	top: -2.5px;
+}
+.tab:hover:not(.active) div:last-child{
+	transition: top 100ms ease-out;
+	top: 2.5px;
+}
+
 	
 </style>
