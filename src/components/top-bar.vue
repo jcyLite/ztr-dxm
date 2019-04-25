@@ -13,18 +13,18 @@
 					<li :class="{active:index==1}"><a @click="$router.push('/works')">works</a></li>
 					<li :class="{active:index==2}"><a @click="$router.push('/about_me')">about me</a></li>
 					<li :class="{active:index==3}"><a @click="$router.push('/contact')">contact</a></li>
-					<li :class="{active:index==4}"><a @click="bindex=index,index=4,signinShow=true">signin</a></li>
-					<li :class="{active:index==5}"><a @click="bindex=index,index=5,signupShow=true">signup</a></li>
+					<li v-show="!$store.state.uid" :class="{active:index==4}"><a @click="bindex=index,index=4,signinShow=true">signin</a></li>
+					<li v-show="!$store.state.uid" :class="{active:index==5}"><a @click="bindex=index,index=5,signupShow=true">signup</a></li>
 				</ul>
 			</div>
 			<div @click="$router.push('/mine')" class="user_info">
-				<div class="user_img"></div>
+				<div v-if="$store.state.uname" class="user_img"></div>
 				<div v-if="$store.state.uname" class="user_id">
 					{{$store.state.uname}}
 				</div>
 				<div class="sign_list">
-					<div>sign out</div>
-					<div>sign out</div>
+					<div @click="sign_out">sign out</div>
+					<!--<div>sign out</div>-->
 				</div>
 			</div>
 			
@@ -65,6 +65,13 @@
 			}
 		},
 		methods:{
+			sign_out(){
+				this.$store.state.uid='';
+				this.$store.state.uname='';
+				localStorage.removeItem('uid');
+				localStorage.removeItem('uname');
+				window.location.reload();
+			},
 			shadeClick(type){
 				if(type=='openSignUp'){
 					this.signupShow=true;

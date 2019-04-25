@@ -99,6 +99,11 @@ app.post('/works_likes',bodyParser.json({limit: '10mb'}),function(req, res){
 		yidian
 	})
 })
+app.post('/upload',bodyParser.json({limit: '50mb'}),function(req, res){
+	var body=req.body;
+	var avatar=body.avatar;
+	
+})
 
 app.post('/upload',bodyParser.json({limit: '50mb'}),function(req, res){
 	var time = new Date().getTime();
@@ -115,6 +120,7 @@ app.post('/upload',bodyParser.json({limit: '50mb'}),function(req, res){
 	body.imgs=ImgsPath;
 	var zid='zid'+time;
 	body.zid=zid;
+	body.timestamp=time;
 	result.push(body);
 	fs.writeFileSync(resolve("./api/zuoping.json"),
 		JSON.stringify(result))
@@ -160,6 +166,7 @@ app.post('/zuoping',bodyParser.json({limit: '10mb'}),function(req, res){
 		}
 	}else{
 		result.forEach(item=>{
+			item.dianzhan=item.dianzhan||[];
 			if(item.uid==uid){
 				item.dianzhanshu=item.dianzhan.length;
 				delete item.dianzhan;

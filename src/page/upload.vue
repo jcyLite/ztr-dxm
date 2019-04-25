@@ -163,7 +163,17 @@
 				};
 			},
 			tijiao(){
-				console.log(12)
+				if(!this.$store.state.uid){
+					return alert('未登录')
+				}else if(!this.biaoti){
+					return alert('标题不能为空')
+				}else if(!this.fenlei){
+					return alert('分类不能为空')
+				}else if(!this.imgs.length){
+					return alert('未添加图片')
+				}else if(!this.cover){
+					return alert('未添加封面')
+				}
 				this.$http.post('upload',{
 					uid:this.$store.state.uid,
 					biaoti:this.biaoti,

@@ -7,7 +7,9 @@
 		</div>
 		<div class="container">
 			<div class="user_info">
-				<div class="user_img"></div>
+				<div class="user_img">上传头像
+					<input type="file" />
+				</div>
 				<div v-if="$store.state.uname" class="user_name">{{$store.state.uname}}</div>
 				<div class="user_job">user_job</div>
 				<div class="user_zym">user_zym</div>
@@ -34,10 +36,10 @@
 						<div class="cover_info">
 							<p class="works_name">{{item.biaoti}}</p>
 							<p class="works_fenlei">{{item.fenlei}}</p>
-							<div><i class="views_img"></i><span>{{item.yulan}}</span></div>
+							<div><i class="views_img"></i><span>{{item.yulan||0}}</span></div>
 							<div><i class="likes_img"></i><span>{{item.dianzhanshu}}</span></div>
 						</div>
-						<div class="upload_date">2天前</div>
+						<div class="upload_date">{{zhuanhuanshijian(item.timestamp)}}</div>
 					</div>
 				
 				</div>
@@ -91,6 +93,10 @@
 			'box':()=>import('../components/box.vue')
 		},
 		methods:{
+			zhuanhuanshijian(timestamp){
+				var a=parseInt((new Date().getTime()-timestamp)/86400000);
+				return a>365?(parseInt(a/365)+'年'+(a%365)+'天前'):a?(a+'天前'):'今天';
+			},
 			qiehuan(type,isqbz){
 				var isme=true;
 				this.$http.post('zuoping',{
@@ -141,6 +147,15 @@
 	border-radius: 63px;
 	border: 6px #FFFFFF solid;
 	overflow: hidden;
+	text-align: center;
+	line-height: 114px;
+	input{
+		width: 100%;
+		height: 100%;
+		display: block;
+		opacity: 0;
+		cursor: pointer;
+	}
 }
 .user_name{
 	font-size: 24px;

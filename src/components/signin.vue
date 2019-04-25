@@ -6,7 +6,7 @@
 			<div class="signin_container">
 				<div class="logo"></div>
 				<div class="user"><input v-model="uname" type="text" name="" id="" placeholder="请输入用户名"/></div>
-				<div class="password"><input v-model="upassword" type="password" name="" id="" placeholder="请输入密码"/></div>
+				<div class="password"><input @keyup.enter="login" v-model="upassword" type="password" name="" id="" placeholder="请输入密码"/></div>
 				<div class="signup"><a @click="$emit('shadeClick','openSignUp')">快速注册</a></div>
 				<div @click="login" class="login">登录</div>
 			</div>
@@ -35,6 +35,7 @@
 						localStorage.setItem('uid',d.uid);
 						localStorage.setItem('uname',d.uname);
 						this.$emit('shadeClick')
+						window.location.reload();
 					}
 				})
 			}

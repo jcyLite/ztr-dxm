@@ -18,7 +18,7 @@
 				Study hard, improve every day.Study hard, improve every day.Study hard, improve every day.Study hard, improve every day.
 
 				</p>
-				<div class="publish_time">发布于：<span class="upload_date">2000</span></div>
+				<div class="publish_time">发布于：<span class="upload_date">{{changeTime(data.timestamp)}}</span></div>
 			</div>
 		</div>
 		<div class="work_img">
@@ -93,6 +93,10 @@
 			})
 		},
 		methods:{
+			changeTime(a){
+				var b=new Date(a);
+				return b.getFullYear()+'年'+(b.getMonth()+1)+'月'+b.getDate()+'日'
+			},
 			dianzan(){
 				this.$http.post('works_likes',{
 					uid:this.$store.state.uid,

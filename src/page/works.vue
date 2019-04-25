@@ -82,7 +82,9 @@
 		},
 		methods:{
 			qiehuan(type,isqbz){
-				this.$http.post('zuoping',{type,isqbz}).then(d=>{
+				this.$http.post('zuoping',{
+					uid:this.$store.state.uid,
+					type,isqbz}).then(d=>{
 					this.data=d;
 					this.type=type;
 				})
