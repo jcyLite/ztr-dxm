@@ -200,12 +200,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		&:hover .sign_list{
-			top: 100%;
-			opacity: 1;
-			min-height: 80px;
-			transition: all .5s ease;
-		}
+		
 		.user_img{
 			width: 32px;
 			height: 32px;
@@ -224,6 +219,12 @@
 			overflow: hidden;
 			cursor: pointer;
 		}
+		&:hover .sign_list{
+			top: 100%;
+			opacity: 1;
+			min-height: 80px;
+			transition: all .5s ease;
+		}
 		.sign_list{
 			width: 140px;
 			display: flex;
@@ -234,7 +235,7 @@
 			background: #444;
 			opacity: 0;
 			position: absolute;
-			top: 150%;
+			top: 85px;
 			left: 0;
 			z-index: 10;
 			cursor: pointer;
