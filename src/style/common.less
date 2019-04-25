@@ -1,0 +1,227 @@
+/*清除公共样式*/
+
+html,
+body,
+div,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+dl,
+dt,
+dd,
+ol,
+form,
+input,
+button,
+textarea,
+th,
+td,
+select {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+    font-family: syht;
+}
+
+body,
+form,
+input,
+button,
+textarea,
+th,
+td,
+select {
+    font-family: syht;
+    font-size: 14px;
+    color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: lighter;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+img {
+    border: none;
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+}
+
+table {
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+input,
+button,
+textarea {
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+textarea {
+    resize: none;
+    overflow: auto;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix:after {
+    content: ".";
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    display: block;
+    clear: both;
+    overflow: hidden;
+}
+
+.ellipse {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.inline {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+@font-face {
+    font-family: syht;
+    src: url('../fonts/SourceHanSerifCN-ExtraLight.otf') format('opentype');
+}
+
+
+/*公共样式*/
+@media screen and (max-width:1920px){
+	.container {
+	    width: 1170px;
+	    margin: 0 auto;
+	}
+}
+@media screen and (max-width:1440px){
+	.container {
+	    width: 960px;
+	    margin: 0 auto;
+	}
+}
+
+
+
+/* 三角形、圆圈、正方形 */
+
+.sjx {
+    width: 26px;
+    height: 22px;
+    background: url(../img/sanjiaoxing.png) no-repeat;
+    position: absolute;
+    z-index: 99999;
+}
+
+.zfx {
+    width: 26px;
+    height: 26px;
+    background: url(../img/zhengfangxing.png) no-repeat;
+    position: absolute;
+    z-index: 99999;
+}
+
+.yq {
+    width: 22px;
+    height: 22px;
+    background: url(../img/yuan.png) no-repeat;
+    position: absolute;
+    z-index: 99999;
+}
+
+.sjx1 {
+    left: 200px;
+    top: 192px;
+    transform: rotateZ(30deg);
+}
+
+.zfx1 {
+    left: 300px;
+    top: 478px;
+}
+
+.yq1 {
+    left: 100px;
+    top: 720px;
+}
+
+.sjx2 {
+    left: 270px;
+    top: 992px;
+}
+
+.zfx2 {
+    left: -2px;
+    top: 1157px;
+    transform: rotateZ(60deg);
+}
+
+.yq2 {
+    left: 644px;
+    top: 626px;
+}
+
+.sjx3 {
+    right: 454px;
+    top: 233px;
+    transform: rotateZ(5deg);
+}
+
+.zfx3 {
+    right: 145px;
+    top: 265px;
+    transform: rotateZ(15deg);
+}
+
+.yq3 {
+    right: 138px;
+    top: 850px;
+}
+
+.zfx4 {
+    right: 275px;
+    top: 1137px;
+    transform: rotateZ(18deg);
+}
+
+.zfx5 {
+    right: 768px;
+    top: 788px;
+    transform: rotateZ(10deg);
+}

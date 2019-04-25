@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.selectBox{
+				width: 400px;
+				height: 36px;
+				line-height: 36px;
+				background: #f72323;
+				float: left;
+			}
+			.inputCase{
+				position: relative;
+				width: 100%;
+				height: 100%;
+				box-sizing: border-box;
+			}
+			.inputCase input.imitationSelect{
+				width: 100%;
+				height: 100%;
+				box-sizing: border-box;
+				border: 1px solid #ccc;
+				display: block;
+				text-indent: 20px;
+				cursor: default;
+			}
+			.inputCase i.fa{
+				position: absolute;
+				right: 10px;
+				top: 10px;
+				color: #007AFF;
+			}
+			.selectUl{
+				display: none;
+				padding: 0;
+				margin: 0;
+				border-bottom: 1px solid #ccc;
+				border-left: 1px solid #ccc;
+				border-right: 1px solid #ccc;
+			}
+			.selectUl li{
+				height: 36px;
+				line-height: 36px;
+				list-style: none;
+				text-indent: 20px;
+				border-bottom: 1px solid #ccc;
+			}
+			.selectUl li:hover{
+				background: #ddd;
+			}
+			.selectUl li:last-child{
+				border-bottom: 0 none;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
+	</head>
+	<body>
+		<!--
+        	作者：1327910276@qq.com
+        	时间：2018-06-01
+        	描述：自定义select
+        -->
+        <div class="selectBox">
+        	<div class="inputCase">
+				<input class="imitationSelect" type="text" oulName="" oulId="" value="" readonly/>
+				<i class="fa fa-caret-down"></i>
+			</div>
+			<ul class="selectUl parentUl">
+				<!--<li oliName="衣服商店" oliId="1" class="actived_li">衣服</li>
+				<li oliName="水果商店" oliId="2">水果</li>
+				<li oliName="家具商店" oliId="3">家具</li>-->
+			</ul>
+        </div>
+        <div class="selectBox">
+        	<div class="inputCase">
+				<input class="imitationSelect" type="text" oulName="" oulId="" value="" readonly/>
+				<i class="fa fa-caret-down"></i>
+			</div>
+			<ul class="selectUl childrenUl">
+				<!--<li oliName="橘子" oliId="1" class="actived_li">橘子</li>
+				<li oliName="苹果" oliId="2">苹果</li>
+				<li oliName="桃子" oliId="3">桃子</li>-->
+			</ul>
+        </div>
+		<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				var arrl = ["衣服商店","水果商店","家具商店"];
+				var brrl = [["夹克","衬衫","牛仔裤","帽子","披风","围巾","鞋子"],["梨子","橘子","苹果","香蕉","葡萄","西瓜"],["沙发","椅子","茶几","床"]];
+				var Index="";
+				var temp="";
+				for(var i=0;i<arrl.length;i++){
+					//temp+= '<li oliName="'++'" oliId="'++'">'+衣服+'</li>';
+					temp+= '<li>'+arrl[i]+'</li>';
+					console.log(temp)
+					$(".parentUl").html(temp);
+				}
+				//说明：arrl 数组的个数对应 brrl 的里面的数组个数
+				$(".selectBox .imitationSelect").on("click",function(){
+					
+					$(this).parent().next().toggle();//ul弹窗展开
+					$(this).next().toggleClass("fa-caret-up")//点击input选择适合，小图标动态切换
+					if (event.stopPropagation) {   
+			        	// 针对 Mozilla 和 Opera   
+			        	event.stopPropagation();   
+			        }else if (window.event) {   
+			        	// 针对 IE   
+			        	window.event.cancelBubble = true;   
+			        }   
+			        /*阻止事件传播，事件从点击的元素出发，向外（window）传播，
+					如果不写个阻止事件，会导致下面的document点击函数一起执行，导致显示失败*/
+				});
+				$(".parentUl li").click(function(event){
+					//第一个仿select下拉时候触发函数
+					Index = $(this).index();//当前点击第一个ul li的序列号
+					console.log(Index);
+					$(this).addClass("actived_li").siblings().removeClass("actived_li");//点击当前的添加。actived_li这个类；其他的移除这个类名
+					$(this).parent().prev().children().val($(this).text());//把当前点击的text文本赋值到显示的input的val里面
+					
+					$(".childrenUl").prev().children(".imitationSelect").val("");
+					var teml="";//置空
+					for(var i=0;i<brrl[Index].length;i++){
+						//temp+= '<li oliName="'++'" oliId="'++'">'+衣服+'</li>';
+						teml+= '<li>'+brrl[Index][i]+'</li>';
+						console.log(teml)
+						$(".childrenUl").html(teml);
+					}
+					
+					$(".childrenUl li").click(function(event){
+						//第二个仿select下拉时候触发函数
+						$(this).parent().prev().children().val($(this).text());//把当前点击的text文本赋值到显示的input的val里面
+						console.log($(this).text())
+					})
+					
+					
+					/*$(this).addClass("actived_li").siblings().removeClass("actived_li");//点击当前的添加。actived_li这个类；其他的移除这个类名
+					var oliName = $(this).attr("oliName");//定义一个name属性，获取点击的元素属性赋值到当前，方便动态化传值
+					var oliId = $(this).attr("oliId");//定义一个id属性，获取点击的元素属性赋值到当前，方便动态化传值
+					$(this).parent().prev().children().val(oliName); //把当前点击的name赋值到显示的input的val里面
+					$(this).parent().prev().children().attr("oliName",oliName);//把当前点击的oliName赋值到显示的input的oliName里面
+					$(this).parent().prev().children().attr("oliId",oliId);//把当前点击的oliId赋值到显示的input的oliId里面*/
+				});
+				
+				$(document).click(function(event){
+					$(".inputCase .fa").removeClass("fa-caret-up").addClass("fa-caret-down")//当点隐藏ul弹窗时候，把小图标恢复原状
+					$(".selectUl").hide();//当点击空白处，隐藏ul弹窗
+				});
+				
+			})
+			
+		</script>
+	</body>
+</html>
