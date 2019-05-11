@@ -143,7 +143,7 @@
 			}
 			.shade {
 				transition: .5s all;
-				transform: translateY(100%);
+				transform: translateY(101%);
 				width: 100%;
 				position: absolute;
 				display: flex;

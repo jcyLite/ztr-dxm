@@ -99,11 +99,7 @@ app.post('/works_likes',bodyParser.json({limit: '10mb'}),function(req, res){
 		yidian
 	})
 })
-app.post('/upload',bodyParser.json({limit: '50mb'}),function(req, res){
-	var body=req.body;
-	var avatar=body.avatar;
-	
-})
+
 
 app.post('/upload',bodyParser.json({limit: '50mb'}),function(req, res){
 	var time = new Date().getTime();
@@ -204,6 +200,64 @@ app.post('/regist',bodyParser.json({limit: '10mb'}),function(req, res){
 		code:0
 	})
 })
+
+app.post('/changeAvatar',bodyParser.json({limit: '10mb'}),function(req,res){
+	var body=req.body;
+	var uid=body.uid;
+	var avatar=body.avatar;
+	var result=JSON.parse(fs.readFileSync(resolve("./api/user.json")))
+	var arr=[],mpath;
+	result.forEach(item=>{
+		if(item.uid==uid){
+			var obj=replaceB64(avatar,'avatar');
+			item.avatar=obj.mpath;
+			mpath=obj.mpath;
+		}
+		arr.push(item)
+	})
+	fs.writeFileSync(
+		resolve("./api/user.json"),
+		JSON.stringify(arr)
+	)
+	res.json({
+		code:0,
+		data:mpath
+	})
+})
+
+app.post('/addUser',bodyParser.json({limit: '10mb'}),function(req,res){
+	var body=req.body;
+	var result=JSON.parse(fs.readFileSync(resolve("./api/user.json")));
+	var arr=[]
+	result.forEach(item=>{
+		if(item.uid==body.uid){
+			item[body.okey]=body.ovalue;
+		}
+		arr.push(item)
+	})
+	fs.writeFileSync(
+		resolve("./api/user.json"),
+		JSON.stringify(arr)
+	)
+	res.json({
+		code:0
+	})
+})
+
+app.post('/user_info',bodyParser.json({limit: '10mb'}),function(req,res){
+	var body=req.body;
+	var uid=body.uid;
+	var result=JSON.parse(fs.readFileSync(resolve("./api/user.json")))
+	result.forEach(item=>{
+		if(item.uid==uid){
+			res.json({
+				code:0,
+				data:item
+			})
+		}
+	})
+})
+
 app.post('/login',bodyParser.json({limit: '10mb'}),function(req,res){
 	var body=req.body;
 	var upassword=cryptoPassFunc(body.upassword);
@@ -221,7 +275,10 @@ app.post('/login',bodyParser.json({limit: '10mb'}),function(req,res){
 					code:0,
 					msg:'登录成功',
 					uid:item.uid,
-					uname:item.uname
+					uname:item.uname,
+					avatar:item.avatar,
+					user_job:item.user_job,
+					user_zym:item.user_zym
 				})
 			}
 		}

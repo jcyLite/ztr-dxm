@@ -4,7 +4,7 @@
 			
 		</div>
 			<div class="signin_container">
-				<div class="logo"></div>
+				<div class="logo-a"></div>
 				<div class="user"><input v-model="uname" type="text" name="" id="" placeholder="请输入用户名"/></div>
 				<div class="password"><input @keyup.enter="login" v-model="upassword" type="password" name="" id="" placeholder="请输入密码"/></div>
 				<div class="signup"><a @click="$emit('shadeClick','openSignUp')">快速注册</a></div>
@@ -31,9 +31,13 @@
 				}).then(d=>{
 					if(d.code==0){
 						this.$store.state.uid=d.uid;
+						this.$store.state.avatar=d.avatar;
 						this.$store.state.uname=d.uname;
 						localStorage.setItem('uid',d.uid);
 						localStorage.setItem('uname',d.uname);
+						localStorage.setItem('avatar',d.avatar);
+						localStorage.setItem('user_job',d.user_job);
+						localStorage.setItem('user_zym',d.user_zym);
 						this.$emit('shadeClick')
 						window.location.reload();
 					}
@@ -78,7 +82,7 @@
 			display: flex;
 			flex-flow: column wrap;
 			align-items: center;
-			.logo{
+			.logo-a{
 				width: 100px;
 				height: 100px;
 				background-image: url(../img/logo02.png);

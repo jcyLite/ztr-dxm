@@ -5,6 +5,7 @@ import { createStore } from './store'
 import { createRouter } from './router'
 import { sync } from 'vuex-router-sync'
 import './style/index.less';
+
 Vue.prototype.Rellax=Rellax;
 import './store/server.js';
 import topBar from './components/top-bar.vue';
@@ -24,7 +25,8 @@ export function createApp () {
     router,
     store,
     mounted(){
-
+			window.$=require('jquery');
+			import('./jqModule/cropping/js/cropper.min.js')
    }, 
     render: h => h(App)
   })

@@ -4,7 +4,7 @@ import VueAxios from 'vue-axios'
 import Qs from 'qs';
 Vue.use(VueAxios,axios);
 axios.defaults.baseURL="http://localhost:3334"
-axios.defaults.timeout=12000;
+axios.defaults.timeout=24000;
 axios.defaults.headers={ //设置相应头
 	'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
 	'Accept': 'application/json, text/plain'
@@ -30,12 +30,6 @@ axios.interceptors.response.use(
 		return res.data
 	},
 	err => {
-		store.state.loadingCount--;
-		Dialog.$create({
-			type: 'alert',
-			title:'系统异常提示!',
-			content:'服务器异常',
-			icon: 'potic-alert'
-		}).show()
+		console.error(err)
 	}
 )

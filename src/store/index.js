@@ -8,6 +8,7 @@ export function createStore () {
     state: {
     	uid:'',
     	uname:'',
+    	avatar:'',
       activeType: null
    },
    mutations:{
