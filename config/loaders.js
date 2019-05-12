@@ -1,14 +1,23 @@
 const isProd = process.env.NODE_ENV === 'production';
-const ExtractTextPlugin=require('extract-text-webpack-plugin');
-module.exports = [
-	{
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const vueLoaderConfig = {
+	cssSourceMap: true,
+	cacheBusting: true,
+	transformToRequire: {
+		video: ['src', 'poster'],
+		source: 'src',
+		img: 'src',
+		image: 'xlink:href'
+	},
+	cssModules: {
+		localIdentName: '[path][name]---[local]---[hash:base64:5]',
+		camelCase: true
+	}
+}
+module.exports = [{
 		test: /\.vue$/,
 		loader: 'vue-loader',
-		options: {
-			compilerOptions: {
-				preserveWhitespace: false
-			}
-		}
+		options:vueLoaderConfig
 	},
 	{
 		test: /\.html|.tpl|.md$/,
@@ -39,8 +48,6 @@ module.exports = [
 		loader: 'url-loader',
 		options: {
 			limit: 1000,
-			outputPath: "./fonts",
-			publicPath: "../fonts",
 			name: "[name].[ext]"
 		}
 	},
@@ -53,7 +60,10 @@ module.exports = [
 		}
 	},
 	{
-		test:/\.(styl|stylus)$/,
+
+	},
+	{
+		test: /\.(styl|stylus)$/,
 		use: isProd ?
 			ExtractTextPlugin.extract({
 				use: [{
@@ -65,8 +75,11 @@ module.exports = [
 					'stylus-loader'
 				],
 				fallback: 'vue-style-loader'
-			}) :
-			['vue-style-loader', 'css-loader', 'stylus-loader']
+			}) : ['vue-style-loader', 'css-loader', 'stylus-loader']
+	},
+	{
+		test: /\.css$/,
+		loader: 'css-loader'
 	},
 	{
 		test: /\.less$/,
@@ -81,7 +94,6 @@ module.exports = [
 					'less-loader'
 				],
 				fallback: 'vue-style-loader'
-			}) :
-			['vue-style-loader', 'css-loader', 'less-loader']
+			}) : ['vue-style-loader', 'css-loader', 'less-loader']
 	}
 ]

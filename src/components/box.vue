@@ -12,7 +12,7 @@
 				<div class="works_categories">{{item.fenlei}}</div>
 				<div class="works_author">
 					<div class="user_img"></div>
-					<div v-if="$store.state.uname" class="user_name">{{$store.state.uname}}</div>
+					<div v-if="$store.state.uname" class="user_name">{{item.uname}}</div>
 				</div>
 				<div :class="{active:item.medianzhan}" @click.stop="works_likes(item)" class="works_likes"></div>
 				

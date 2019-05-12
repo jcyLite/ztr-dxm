@@ -128,10 +128,10 @@
 				active: false,
 				flagX: true,
 				base64url: '',
-				user_job:'暂无数据',
-				user_zym:'暂无数据',
-				disableda:true,
-				disabledb:true
+				user_job: '暂无数据',
+				user_zym: '暂无数据',
+				disableda: true,
+				disabledb: true
 			}
 		},
 		watch: {
@@ -152,19 +152,19 @@
 				import('../components/box.vue')
 		},
 		methods: {
-			edit(disabled,oname){
-				
-				this[disabled]=!this[disabled];
-				if(this[disabled]){
-					this.$http.post('/addUser',{
-						okey:oname,
-						ovalue:this[oname],
-						uid:this.$store.state.uid
-					}).then(d=>{
-						localStorage.setItem(oname,this[oname])
+			edit(disabled, oname) {
+
+				this[disabled] = !this[disabled];
+				if(this[disabled]) {
+					this.$http.post('/addUser', {
+						okey: oname,
+						ovalue: this[oname],
+						uid: this.$store.state.uid
+					}).then(d => {
+						localStorage.setItem(oname, this[oname])
 					})
 				}
-				
+
 			},
 			a() {
 				$('#tailoringImg').cropper("reset");
@@ -268,15 +268,15 @@
 		},
 		mounted() {
 			new  this.Rellax('.rellax');
-			this.$http.post('/user_info',{
-				uid:this.$store.state.uid
-			}).then(d=>{
-				this.user_job=d.data.user_job||'暂无数据';
-				this.user_zym=d.data.user_zym||'暂无数据';
+			this.$http.post('/user_info', {
+				uid: this.$store.state.uid
+			}).then(d => {
+				this.user_job = d.data.user_job || '暂无数据';
+				this.user_zym = d.data.user_zym || '暂无数据';
 			})
 			this.avatar = localStorage.getItem('avatar');
 			this.qiehuan('all', false);
-			
+
 		}
 	}
 </script>
@@ -341,10 +341,10 @@
 				position: absolute;
 				right: -28px;
 				cursor: pointer;
-				&.active{
+				&.active {
 					background-image: url(../img/save.png);
 				}
-				&:hover{
+				&:hover {
 					opacity: 0.6;
 				}
 			}
@@ -358,7 +358,7 @@
 				display: inline-block;
 				width: 16px;
 				height: 16px;
-				&.active{
+				&.active {
 					background-image: url(../img/save.png);
 				}
 				background: url(../img/edit.png) no-repeat;
@@ -367,12 +367,12 @@
 				right: -28px;
 				top: 4px;
 				cursor: pointer;
-				&:hover{
+				&:hover {
 					opacity: 0.6;
 				}
 			}
 		}
-		.cover-box{
+		.cover-box {
 			width: 100%;
 			height: 210px;
 			overflow: hidden;
@@ -383,11 +383,11 @@
 				background-position: center center;
 				background-repeat: no-repeat;
 				overflow: hidden;
-				transition:.3s all;
+				transition: .3s all;
 				cursor: pointer;
-				transform:scale(1);
+				transform: scale(1);
 				&:hover {
-					transform:scale(1.2);
+					transform: scale(1.2);
 					/*background-size: 120%;*/
 				}
 			}
@@ -655,7 +655,6 @@
 			color: #222;
 			font-size: 14px;
 			line-height: 30px;
-			font-family: '思源宋体';
 			margin-right: 16px;
 			float: left;
 		}
@@ -667,7 +666,6 @@
 			font-size: 14px;
 			line-height: 30px;
 			text-align: center;
-			font-family: '思源宋体';
 			cursor: pointer;
 		}
 		.send button:hover {
@@ -1166,7 +1164,6 @@
 				color: #222;
 				font-size: 14px;
 				line-height: 30px;
-				font-family: '思源宋体';
 				margin-right: 16px;
 				float: left;
 			}
@@ -1178,7 +1175,6 @@
 				font-size: 14px;
 				line-height: 30px;
 				text-align: center;
-				font-family: '思源宋体';
 				cursor: pointer;
 			}
 			.send button:hover {

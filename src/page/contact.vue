@@ -39,7 +39,6 @@
 					</div>
 				</div>
 
-
 			</div>
 		</div>
 
@@ -77,26 +76,29 @@
 
 <script>
 	export default {
-		
+
 	}
 </script>
 
 <style lang="less" scoped>
 	/*导航栏*/
-	.top_bar{
+	
+	.top_bar {
 		width: 100%;
 		position: fixed;
 		top: 0;
 		z-index: 100000;
 	}
-	.nav{
+	
+	.nav {
 		width: 80%;
 		height: 110px;
 		position: relative;
 		margin: 0 auto;
 		top: 0;
 	}
-	.logo{
+	
+	.logo {
 		width: 83px;
 		height: 23px;
 		position: absolute;
@@ -105,44 +107,50 @@
 		background: url(../img/logo02.png) no-repeat;
 		cursor: pointer;
 	}
-	.logo a{
+	
+	.logo a {
 		width: 100%;
 		height: 100%;
 		display: block;
 		position: absolute;
 	}
-	.tab{
+	
+	.tab {
 		width: 26px;
 		height: 23px;
 		position: absolute;
 		right: 0;
 		top: 43.5px;
-	}	
-	.tab>div{
+	}
+	
+	.tab>div {
 		width: 26px;
 		height: 2px;
 		background: #000;
 		margin-top: 8px;
 	}
-	.tab>div:first-child{
+	
+	.tab>div:first-child {
 		margin-top: 0;
 	}
-	.tab:hover div:first-child{
+	
+	.tab:hover div:first-child {
 		transition: top 100ms ease-out;
 		top: -2.5px;
 	}
-	.tab:hover div:last-child{
+	
+	.tab:hover div:last-child {
 		transition: top 100ms ease-out;
 		top: 2.5px;
-	}	
-
+	}
 	/*banner*/
+	
 	.contact_banner {
 		width: 100%;
 		background: #FFFFFF;
 		padding: 162px 0 60px 0;
 	}
-
+	
 	.contact_banner p {
 		font-size: 52px;
 		color: #222222;
@@ -152,31 +160,29 @@
 		position: relative;
 		animation: moveTop_p 2s ease-out;
 	}
-
+	
 	@keyframes moveTop_p {
 		from {
 			right: 160px;
 			opacity: 0;
 		}
-
 		to {
 			right: 0;
 			opacity: 1;
 		}
 	}
-
+	
 	@-webkit-keyframes moveTop_p {
 		from {
 			right: 160px;
 			opacity: 0;
 		}
-
 		to {
 			right: 0;
 			opacity: 1;
 		}
 	}
-
+	
 	.contact_banner span {
 		display: block;
 		width: 750px;
@@ -193,46 +199,43 @@
 		position: relative;
 		animation: moveTop_span 2.2s ease-out;
 	}
-
+	
 	@keyframes moveTop_span {
 		from {
 			right: 100px;
 			opacity: 0;
 		}
-
 		to {
 			right: 0;
 			opacity: 1;
 		}
 	}
-
+	
 	@-webkit-keyframes moveTop_span {
 		from {
 			right: 100px;
 			opacity: 0;
 		}
-
 		to {
 			right: 0;
 			opacity: 1;
 		}
 	}
-
 	/*联系信息*/
+	
 	.contact_wrap {
 		width: 100%;
 		height: 530px;
 		position: relative;
 		padding-bottom: 110px;
-
 	}
-
+	
 	.contact_wrap>div {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 	}
-
+	
 	.left_part,
 	.right_part {
 		height: 240px;
@@ -242,7 +245,7 @@
 		justify-content: space-between;
 		align-items: center;
 	}
-
+	
 	.lxfs {
 		width: 200px;
 		text-align: center;
@@ -250,24 +253,24 @@
 		letter-spacing: 2.5px;
 		flex: 1;
 	}
-
+	
 	.lxfs p {
 		font-size: 14px;
 		color: #222222;
 		line-height: 60px;
 	}
-
+	
 	.lxfs span a {
 		display: block;
 		font-size: 14px;
 		color: #9B9B9B;
 	}
-
+	
 	.lxfs span a:hover {
 		color: #222;
 		text-decoration: underline;
 	}
-
+	
 	// .numb{
 	// 	top: 142px;
 	// 	left: 19%;
@@ -284,8 +287,8 @@
 	// 	top: 254px;
 	// 	right: 19%;
 	// }
-
 	/*留言板*/
+	
 	.card {
 		// width: 666px;
 		height: 420px;
@@ -295,7 +298,7 @@
 		padding-top: 45px;
 		flex: 3;
 	}
-
+	
 	.card p {
 		font-size: 18px;
 		color: #222222;
@@ -303,7 +306,7 @@
 		line-height: 26px;
 		margin-bottom: 20px;
 	}
-
+	
 	.card input {
 		width: 466px;
 		height: 48px;
@@ -315,7 +318,7 @@
 		border-bottom: 1px solid #D8D8D8;
 		display: block;
 	}
-
+	
 	.card textarea {
 		width: 466px;
 		line-height: 48px;
@@ -326,7 +329,7 @@
 		border-bottom: 1px solid #D8D8D8;
 		display: block;
 	}
-
+	
 	.card button {
 		width: 110px;
 		height: 40px;
@@ -339,7 +342,7 @@
 		position: relative;
 		cursor: pointer;
 	}
-
+	
 	.card button i {
 		width: 13px;
 		height: 12px;
@@ -349,13 +352,12 @@
 		top: 5px;
 		right: 5px;
 	}
-
+	
 	.card button:hover {
 		background: #222222;
 	}
-
-
 	/* footer */
+	
 	.footer {
 		width: 100%;
 		height: 270px;
@@ -363,7 +365,7 @@
 		border-top: 1px solid #D6D6D6;
 		padding: 120px 0;
 	}
-
+	
 	.logo2 {
 		width: 83px;
 		height: 30px;
@@ -371,38 +373,37 @@
 		float: left;
 		cursor: pointer;
 	}
-
+	
 	.logo2 a {
 		width: 100%;
 		height: 100%;
 		display: block;
 		z-index: 100;
 	}
-
+	
 	.tab2 {
 		width: 460px;
 		height: 30px;
 		float: left;
 		margin-left: 298px;
-
 	}
-
+	
 	.tab2 ul {
 		display: flex;
 	}
-
+	
 	.tab2 ul li {
 		padding: 0 32px;
 		cursor: pointer;
 	}
-
+	
 	.tab2 ul li a {
 		font-size: 14px;
 		color: #666;
 		line-height: 28px;
 		text-align: center;
 	}
-
+	
 	.tab2 ul li .tab2_active:after {
 		content: ' ';
 		display: block;
@@ -411,7 +412,7 @@
 		background: #000;
 		clear: both;
 	}
-
+	
 	.tab2 ul li:after {
 		content: ' ';
 		display: block;
@@ -423,7 +424,7 @@
 		top: -2px;
 		transition: width .3s ease-in;
 	}
-
+	
 	.tab2 ul li:hover:after {
 		content: ' ';
 		display: block;
@@ -433,23 +434,21 @@
 		clear: both;
 		transition: width .5s ease-out;
 	}
-
+	
 	.tab2 ul li:hover a {
 		color: #000;
 	}
-
-
-
+	
 	.tab2 ul li a.tab2_active {
 		color: #000;
 	}
-
+	
 	.send {
 		width: 262px;
 		height: 30px;
 		float: right;
 	}
-
+	
 	.send input {
 		width: 160px;
 		height: 30px;
@@ -457,11 +456,10 @@
 		color: #222;
 		font-size: 14px;
 		line-height: 30px;
-		font-family: '思源宋体';
 		margin-right: 16px;
 		float: left;
 	}
-
+	
 	.send button {
 		width: 86px;
 		height: 30px;
@@ -470,17 +468,14 @@
 		font-size: 14px;
 		line-height: 30px;
 		text-align: center;
-		font-family: '思源宋体';
 		cursor: pointer;
 	}
-
+	
 	.send button:hover {
 		background: #222222;
 	}
-
-
+	
 	@media screen and (max-width:1440px) {
-
 		/*导航栏*/
 		.top_bar {
 			width: 100%;
@@ -489,7 +484,6 @@
 			z-index: 100000;
 			background-color: rgba(0, 0, 0, 0);
 		}
-
 		.nav {
 			min-width: 960px;
 			width: 80%;
@@ -498,7 +492,6 @@
 			margin: 0 auto;
 			top: 0;
 		}
-
 		.logo {
 			width: 83px;
 			height: 23px;
@@ -509,7 +502,6 @@
 			background-image: url(../img/logo02.png);
 			background-repeat: no-repeat;
 		}
-
 		.logo a {
 			width: 100%;
 			height: 100%;
@@ -518,7 +510,6 @@
 			z-index: 100;
 			cursor: pointer;
 		}
-
 		.tab {
 			width: 24px;
 			height: 23px;
@@ -527,7 +518,6 @@
 			top: 28.5px;
 			cursor: pointer;
 		}
-
 		.tab>div {
 			width: 24px;
 			height: 2px;
@@ -538,29 +528,23 @@
 			top: 0;
 			transform-origin: 0 0;
 		}
-
 		.tab>div:first-child {
 			margin-top: 0;
 		}
-
 		.tab:hover div:first-child {
 			transition: top 100ms ease-out;
 			top: -2.5px;
 		}
-
 		.tab:hover div:last-child {
 			transition: top 100ms ease-out;
 			top: 2.5px;
 		}
-
-
 		/*banner*/
 		.contact_banner {
 			width: 100%;
 			background: #FFFFFF;
 			padding: 162px 0 60px 0;
 		}
-
 		.contact_banner p {
 			font-size: 52px;
 			color: #222222;
@@ -570,31 +554,26 @@
 			position: relative;
 			animation: moveTop_p 2s ease-out;
 		}
-
 		@keyframes moveTop_p {
 			from {
 				right: 160px;
 				opacity: 0;
 			}
-
 			to {
 				right: 0;
 				opacity: 1;
 			}
 		}
-
 		@-webkit-keyframes moveTop_p {
 			from {
 				right: 160px;
 				opacity: 0;
 			}
-
 			to {
 				right: 0;
 				opacity: 1;
 			}
 		}
-
 		.contact_banner span {
 			display: block;
 			width: 750px;
@@ -611,46 +590,38 @@
 			position: relative;
 			animation: moveTop_span 2.2s ease-out;
 		}
-
 		@keyframes moveTop_span {
 			from {
 				right: 100px;
 				opacity: 0;
 			}
-
 			to {
 				right: 0;
 				opacity: 1;
 			}
 		}
-
 		@-webkit-keyframes moveTop_span {
 			from {
 				right: 100px;
 				opacity: 0;
 			}
-
 			to {
 				right: 0;
 				opacity: 1;
 			}
 		}
-
 		/*联系信息*/
 		.contact_wrap {
 			width: 100%;
 			height: 500px;
 			position: relative;
 			padding-bottom: 110px;
-
 		}
-
 		.contact_wrap>div {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
 		}
-
 		.left_part,
 		.right_part {
 			height: 240px;
@@ -660,7 +631,6 @@
 			justify-content: space-between;
 			align-items: center;
 		}
-
 		.lxfs {
 			width: 190px;
 			text-align: center;
@@ -668,24 +638,20 @@
 			letter-spacing: 2.5px;
 			flex: 1;
 		}
-
 		.lxfs p {
 			font-size: 14px;
 			color: #222222;
 			line-height: 40px;
 		}
-
 		.lxfs span a {
 			display: block;
 			font-size: 14px;
 			color: #9B9B9B;
 		}
-
 		.lxfs span a:hover {
 			color: #222;
 			text-decoration: underline;
 		}
-
 		// .numb{
 		// 	top: 142px;
 		// 	left: 19%;
@@ -702,7 +668,6 @@
 		// 	top: 254px;
 		// 	right: 19%;
 		// }
-
 		/*留言板*/
 		.card {
 			// width: 666px;
@@ -713,7 +678,6 @@
 			padding-top: 45px;
 			flex: 4;
 		}
-
 		.card p {
 			font-size: 18px;
 			color: #222222;
@@ -721,7 +685,6 @@
 			line-height: 26px;
 			margin-bottom: 20px;
 		}
-
 		.card input {
 			width: 400px;
 			height: 48px;
@@ -733,7 +696,6 @@
 			border-bottom: 1px solid #D8D8D8;
 			display: block;
 		}
-
 		.card textarea {
 			width: 400px;
 			line-height: 48px;
@@ -744,7 +706,6 @@
 			border-bottom: 1px solid #D8D8D8;
 			display: block;
 		}
-
 		.card button {
 			width: 100px;
 			height: 36px;
@@ -757,7 +718,6 @@
 			position: relative;
 			cursor: pointer;
 		}
-
 		.card button i {
 			width: 13px;
 			height: 12px;
@@ -767,13 +727,9 @@
 			top: 5px;
 			right: 5px;
 		}
-
 		.card button:hover {
 			background: #222222;
 		}
-
-
-
 		/* footer */
 		.footer {
 			width: 100%;
@@ -782,7 +738,6 @@
 			border-top: 1px solid #D6D6D6;
 			padding-top: 120px;
 		}
-
 		.logo2 {
 			width: 83px;
 			height: 30px;
@@ -792,41 +747,32 @@
 			background-position: 0 center;
 			float: left;
 			cursor: pointer;
-
 		}
-
 		.logo2 a {
 			width: 100%;
 			height: 100%;
 			display: block;
 			z-index: 100;
 		}
-
 		.tab2 {
 			width: 460px;
 			height: 30px;
 			float: left;
 			margin-left: 167px;
-
 		}
-
 		.tab2 ul {
 			display: flex;
 		}
-
 		.tab2 ul li {
 			padding: 0 32px;
 			cursor: pointer;
 		}
-
 		.tab2 ul li a {
 			font-size: 14px;
 			color: #666;
 			line-height: 28px;
 			text-align: center;
 		}
-
-
 		.tab2 ul li:after {
 			content: ' ';
 			display: block;
@@ -836,7 +782,6 @@
 			clear: both;
 			transition: width .3s ease-in;
 		}
-
 		.tab2 ul li:hover:after {
 			content: ' ';
 			display: block;
@@ -846,23 +791,17 @@
 			clear: both;
 			transition: width .5s ease-out;
 		}
-
 		.tab2 ul li:hover a {
 			color: #000;
 		}
-
-
-
 		.tab2 ul li a.tab2_active {
 			color: #000;
 		}
-
 		.send {
 			width: 240px;
 			height: 30px;
 			float: right;
 		}
-
 		.send input {
 			width: 148px;
 			height: 30px;
@@ -870,11 +809,9 @@
 			color: #222;
 			font-size: 14px;
 			line-height: 30px;
-			font-family: '思源宋体';
 			margin-right: 16px;
 			float: left;
 		}
-
 		.send button {
 			width: 76px;
 			height: 30px;
@@ -883,10 +820,8 @@
 			font-size: 14px;
 			line-height: 30px;
 			text-align: center;
-			font-family: '思源宋体';
 			cursor: pointer;
 		}
-
 		.send button:hover {
 			background: #222222;
 		}

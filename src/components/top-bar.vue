@@ -37,7 +37,8 @@
 					{{$store.state.uname}}
 				</div>
 			</div>
-			<div @mouseover="hoverActive=true" :class="{active:$store.state.uid&&hoverActive}" class="sign_list">
+			<div v-show="$store.state.uid" class="sign_list">
+				<div @click="sign_out">sign out</div>
 				<div @click="sign_out">sign out</div>
 			</div>
 		</div>
@@ -148,6 +149,16 @@
 </script>
 
 <style lang="less">
+	.bianhuan(){
+		transform: translateY(25px);
+		height:auto;
+		opacity: 1;
+		
+		div{
+			color: rgba(255,255,255,1);
+			height:56px;
+		}
+	}
 	.top_bar {
 		background: rgba(0, 0, 0, 0);
 		width: 100%;
@@ -269,6 +280,11 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			&:hover{
+				& + .sign_list{
+					.bianhuan();
+				}
+			}
 			.user_img {
 				background-size:cover;
 				width: 32px;
@@ -290,22 +306,26 @@
 			
 		}
 		.sign_list {
+				&:hover{
+					
+					.bianhuan();
+				}
+				height:0;
+				div{
+					height:0px;
+					background: #444;
+				}
 				width: 140px;
 				display: flex;
-				min-height: 80px;
 				opacity: 0;
 				justify-content: space-around;
 				align-items: center;
 				flex-flow: column nowrap;
-				background: #444;
 				position: absolute;
-				top: 85px;
-				right: 0;
+				top: 60px;
+				right: 30px;
 				z-index: 10;
 				transition:.3s all;
-				&.active{
-					opacity: 1;
-				}
 				>div {
 					width: 100%;
 					line-height: 56px;
@@ -315,10 +335,10 @@
 					justify-content: center;
 					flex: 1;
 					text-align: center;
-					color: #fff;
-					&:hover {
+					color: rgba(255,255,255,0);
+					/*&:hover {
 						background: rgba(0, 0, 0, 0.2);
-					}
+					}*/
 				}
 			}
 		&.a {

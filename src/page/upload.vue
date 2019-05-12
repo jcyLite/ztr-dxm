@@ -649,7 +649,6 @@
 		color: #222;
 		font-size: 14px;
 		line-height: 30px;
-		font-family: '思源宋体';
 		margin-right: 16px;
 		float: left;
 	}
@@ -662,7 +661,6 @@
 		font-size: 14px;
 		line-height: 30px;
 		text-align: center;
-		font-family: '思源宋体';
 		cursor: pointer;
 	}
 
@@ -1062,7 +1060,6 @@
 			color: #222;
 			font-size: 14px;
 			line-height: 30px;
-			font-family: '思源宋体';
 			margin-right: 16px;
 			float: left;
 		}
@@ -1075,7 +1072,6 @@
 			font-size: 14px;
 			line-height: 30px;
 			text-align: center;
-			font-family: '思源宋体';
 			cursor: pointer;
 		}
 

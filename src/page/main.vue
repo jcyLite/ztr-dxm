@@ -383,7 +383,6 @@
 		top: 22%;
 		left: 45%;
 		transform: translate(-50%, -50%);
-		font-family: '思源宋体';
 		line-height: 74px;
 		animation: moveTop_zpj_s ease-in-out 2.5s 1;
 	}
@@ -420,7 +419,6 @@
 		top: 42%;
 		left: 45%;
 		transform: translate(-50%, -50%);
-		font-family: '思源宋体';
 		line-height: 74px;
 		animation: moveTop_zpj_j ease-in-out 3s 1;
 	}
@@ -457,7 +455,6 @@
 		top: 62%;
 		left: 45%;
 		transform: translate(-50%, -50%);
-		font-family: '思源宋体';
 		line-height: 74px;
 		animation: moveTop_zpj_k ease-in-out 3.5s 1;
 	}
@@ -493,7 +490,6 @@
 		z-index: 20;
 		top: 83%;
 		left: 17%;
-		font-family: '思源宋体';
 		line-height: 20px;
 		transform: rotateZ(90deg) translate(-50%, -50%);
 		word-spacing: 10px;
@@ -1012,7 +1008,6 @@
 		color: #222;
 		font-size: 14px;
 		line-height: 30px;
-		font-family: '思源宋体';
 		margin-right: 16px;
 		float: left;
 	}
@@ -1025,7 +1020,6 @@
 		font-size: 14px;
 		line-height: 30px;
 		text-align: center;
-		font-family: '思源宋体';
 		cursor: pointer;
 	}
 	
